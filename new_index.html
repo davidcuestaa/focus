@@ -1,0 +1,539 @@
+// ================================================================
+// ESTE ARCHIVO CONTIENE EL HTML COMPLETO LISTO PARA DESCARGAR
+// Copia el contenido de la variable htmlContent y guárdalo como index.html
+// ================================================================
+
+export default function IndexHtml() {
+  const htmlContent = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--
+  ================================================================
+  RESTAURANTE ASIÁTICO CASERO — index.html
+  ================================================================
+  REEMPLAZA ANTES DE PUBLICAR:
+    · "Restaurante Asiático Casero"   → nombre real
+    · PHONE_NUMBER                    → ej: +34 600 000 000
+    · WHATSAPP_NUMBER                 → número sin +, ej: 34600000000
+    · https://share.google/YAQ...     → URL real del PDF de la carta
+    · TU DIRECCIÓN COMPLETA, Ciudad   → dirección real
+
+  DEPLOY EN GITHUB + VERCEL:
+    1. Crea un repo llamado "restaurante-asiatico"
+    2. Sube este archivo como index.html en la rama main
+    3. Entra en vercel.com → "New Project" → importa el repo
+    4. Vercel detecta index.html automáticamente. ¡Listo!
+  ================================================================
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Restaurante Asiático Casero — Comida asiática tradicional, recetas de siempre, producto fresco. Reserva tu mesa hoy." />
+  <title>Restaurante Asiático Casero</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏮</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#faf8f5; --bg2:#f3efe9; --surface:#ffffff; --srf2:#f7f4ef;
+      --red:#8b1a1a; --red2:#a52020;
+      --red-s:rgba(139,26,26,0.07); --red-m:rgba(139,26,26,0.15);
+      --text:#1a1612; --text2:#3d3530; --muted:#7a6f67;
+      --brd:rgba(139,26,26,0.10); --brd2:rgba(139,26,26,0.06);
+      --fh:'Cormorant Garamond',Georgia,serif; --fb:'Inter',system-ui,sans-serif;
+      --r:18px; --sh:0 20px 60px rgba(26,22,18,0.09); --sh2:0 4px 24px rgba(26,22,18,0.06);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{background:var(--bg);color:var(--text);font-family:var(--fb);font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+    @media(hover:none){body{cursor:auto}.cur,.cur-dot{display:none!important}}
+    ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--red);border-radius:10px}
+
+    .cur{position:fixed;pointer-events:none;z-index:9999;width:36px;height:36px;border:1.5px solid var(--red);border-radius:50%;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;mix-blend-mode:multiply}
+    .cur.hov{width:58px;height:58px;background:var(--red-s)}
+    .cur-dot{position:fixed;pointer-events:none;z-index:10000;width:5px;height:5px;background:var(--red);border-radius:50%;transform:translate(-50%,-50%)}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes breathe{0%,100%{transform:scale(1);opacity:.06}50%{transform:scale(1.08);opacity:.1}}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes scrollThumb{0%,100%{left:-100%}50%{left:100%}}
+    @keyframes charUp{from{opacity:0;transform:translateY(110%)}to{opacity:1;transform:translateY(0)}}
+    @keyframes lineGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,64px);height:76px;border-bottom:1px solid transparent;transition:background .5s,border-color .5s,box-shadow .5s}
+    .site-nav.scrolled{background:rgba(250,248,245,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:var(--brd2);box-shadow:0 1px 0 var(--brd2),0 8px 40px rgba(26,22,18,.05)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);cursor:none}
+    .nav-logo-mark{width:40px;height:40px;border:1.5px solid var(--red);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;transition:background .25s}
+    .nav-logo:hover .nav-logo-mark{background:var(--red-s)}
+    .nav-logo-text{font-family:var(--fh);font-size:1.1rem;font-weight:600}
+    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+    .nav-links a{display:block;padding:7px 15px;border-radius:100px;color:var(--muted);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;cursor:none;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:0;height:1px;background:var(--red);transition:width .3s cubic-bezier(.16,1,.3,1)}
+    .nav-links a:hover{color:var(--text)}.nav-links a:hover::after,.nav-links a.active::after{width:20px}
+    .nav-links a.active{color:var(--red)}
+    .nav-cta{background:var(--red)!important;color:#fff!important;font-weight:600!important;padding:9px 22px!important}.nav-cta::after{display:none!important}.nav-cta:hover{background:var(--red2)!important;transform:translateY(-1px)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:none;background:none;border:none;padding:8px;z-index:1001}
+    .hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .3s}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0;transform:translateX(8px)}.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    .mob-menu{position:fixed;inset:0;z-index:999;background:var(--bg);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 clamp(32px,8vw,80px);gap:12px;pointer-events:none;opacity:0;transform:translateX(-100%);transition:opacity .4s,transform .5s cubic-bezier(.16,1,.3,1)}
+    .mob-menu.open{opacity:1;pointer-events:all;transform:translateX(0)}
+    .mob-menu a{font-family:var(--fh);font-size:clamp(2.4rem,8vw,3.8rem);font-weight:300;color:var(--text2);text-decoration:none;cursor:none;line-height:1.1;letter-spacing:-.02em;border-bottom:1px solid var(--brd2);width:100%;padding-bottom:14px;transition:color .2s}
+    .mob-menu a:last-child{border-bottom:none;color:var(--red);font-weight:600}.mob-menu a:hover{color:var(--red)}
+
+    #inicio{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden;padding:0 clamp(20px,5vw,64px);max-width:1400px;margin:0 auto;gap:60px;position:relative}
+    .hero-deco{position:absolute;border-radius:50%;border:1px solid var(--brd);animation:breathe 6s ease-in-out infinite;pointer-events:none}
+    .hero-deco-1{width:360px;height:360px;top:-90px;right:-90px}.hero-deco-2{width:210px;height:210px;bottom:60px;left:-50px;animation-delay:2s}
+    .hero-left{padding-top:100px;padding-bottom:80px}
+    .hero-eyebrow{font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:14px;opacity:0;animation:fadeUp .8s .1s both}
+    .hero-eyebrow::before{content:'01';font-size:.65rem;color:var(--red);font-weight:600}
+    .hero-title{font-family:var(--fh);font-size:clamp(3rem,6.5vw,6rem);font-weight:300;line-height:1.05;letter-spacing:-.02em;margin-bottom:28px;overflow:hidden}
+    .hero-title strong{font-weight:700;display:block;color:var(--red)}
+    .hero-tagline{font-size:clamp(.9rem,1.8vw,1.05rem);color:var(--muted);font-weight:300;letter-spacing:.04em;line-height:1.8;max-width:400px;margin-bottom:48px;opacity:0;animation:fadeUp .8s .75s both}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .95s both}
+    .hero-right{position:relative;padding-top:100px;padding-bottom:80px;display:flex;align-items:center;justify-content:center}
+    .hero-img{width:100%;max-width:460px;aspect-ratio:3/4;border-radius:24px;background:var(--bg2);border:1px solid var(--brd);overflow:hidden;display:flex;align-items:center;justify-content:center;opacity:0;animation:fadeUp 1s .4s both cubic-bezier(.16,1,.3,1)}
+    .hero-img-ph{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--muted)}
+    .hero-img-ph span{font-size:4.5rem}.hero-img-ph small{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase}
+    .hero-pill{position:absolute;bottom:130px;left:-24px;background:var(--surface);border:1px solid var(--brd);border-radius:100px;padding:12px 20px;display:flex;align-items:center;gap:10px;box-shadow:var(--sh);opacity:0;animation:fadeUp .8s 1.2s both}
+    .pill-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;box-shadow:0 0 0 3px rgba(34,197,94,.22)}
+    .pill-txt{font-size:.78rem;color:var(--text2);font-weight:500}
+    .hero-scroll{position:absolute;bottom:36px;left:clamp(20px,5vw,64px);display:flex;align-items:center;gap:16px;color:var(--muted);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:fadeUp .8s 1.4s both}
+    .scroll-track{width:40px;height:1px;background:var(--brd);position:relative;overflow:hidden}
+    .scroll-line{position:absolute;top:0;height:100%;width:100%;background:var(--red);left:-100%;animation:scrollThumb 2s 1.8s ease-in-out infinite}
+
+    .marquee-wrap{overflow:hidden;background:var(--red);padding:18px 0;user-select:none}
+    .marquee-track{display:flex;width:max-content;animation:marquee 20s linear infinite}
+    .mq-item{display:flex;align-items:center;gap:28px;padding:0 28px;color:rgba(255,255,255,.88);font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+    .mq-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);flex-shrink:0}
+
+    .section-wrap{padding:clamp(80px,12vw,140px) clamp(20px,5vw,64px);max-width:1140px;margin:0 auto}
+    .sec-header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .sec-num{font-size:.65rem;font-weight:600;color:var(--red);letter-spacing:.1em}
+    .sec-line{flex:0 0 48px;height:1px;background:var(--red);opacity:.4;transform:scaleX(0);transform-origin:left;transition:transform .8s .2s cubic-bezier(.16,1,.3,1)}
+    .sec-line.show{transform:scaleX(1)}
+    .sec-eye{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
+    .sec-title{font-family:var(--fh);font-size:clamp(2.4rem,5vw,4.2rem);font-weight:300;line-height:1.08;letter-spacing:-.02em;margin-bottom:28px}
+    .sec-title em{font-style:italic;color:var(--red);font-weight:400}
+    .reveal{opacity:0;transform:translateY(44px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+    .reveal.in{opacity:1;transform:none}
+    .d1{transition-delay:.1s}.d2{transition-delay:.22s}.d3{transition-delay:.34s}
+    .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--brd),transparent);max-width:1140px;margin:0 auto}
+
+    .nos-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+    .nos-text p{color:var(--muted);font-size:1rem;line-height:1.9;margin-bottom:20px}
+    .nos-visual{position:relative}
+    .vis-frame{border-radius:var(--r);overflow:hidden;background:var(--bg2);border:1px solid var(--brd);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh);transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s}
+    .vis-frame:hover{transform:translateY(-6px) rotate(.4deg);box-shadow:0 40px 80px rgba(26,22,18,.13)}
+    .vis-ph{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--muted)}
+    .vis-ph span{font-size:4rem}.vis-ph small{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+    .vis-tag{position:absolute;top:24px;left:-16px;background:var(--red);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:8px 18px;border-radius:100px;box-shadow:0 4px 20px rgba(139,26,26,.25)}
+    .vis-stamp{position:absolute;bottom:-18px;right:-18px;width:96px;height:96px;background:var(--surface);border:1px solid var(--brd);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--fh);font-size:.7rem;font-weight:600;color:var(--red);text-align:center;line-height:1.3;box-shadow:var(--sh2)}
+    .feat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+    .feat-item{border:1px solid var(--brd2);border-radius:14px;padding:22px 18px;text-align:center;background:var(--surface);cursor:default;transition:border-color .3s,transform .3s,box-shadow .3s}
+    .feat-item:hover{border-color:var(--red-m);transform:translateY(-4px);box-shadow:0 12px 32px rgba(139,26,26,.07)}
+    .feat-icon{font-size:1.6rem;margin-bottom:8px}.feat-lbl{font-size:.78rem;font-weight:500;color:var(--muted);letter-spacing:.04em}
+
+    .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .menu-card{background:var(--red);border-radius:24px;padding:clamp(40px,7vw,72px) clamp(32px,5vw,56px);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:28px}
+    .mc-bg1{position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.05)}
+    .mc-bg2{position:absolute;bottom:-80px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.04)}
+    .mc-lbl{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500;position:relative}
+    .mc-title{font-family:var(--fh);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:#fff;line-height:1.1;position:relative}
+    .mc-title em{font-style:italic}
+    .menu-tags{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+    .tag{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px;font-size:.74rem;color:rgba(255,255,255,.88);letter-spacing:.05em}
+    .menu-right p{color:var(--muted);font-size:1.02rem;line-height:1.85;margin-bottom:24px}
+
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:100px;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:none;cursor:none;transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s,background .25s,color .25s;position:relative}
+    .btn-primary{background:var(--red);color:#fff;box-shadow:0 6px 28px rgba(139,26,26,.28)}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(139,26,26,.38);background:var(--red2)}
+    .btn-outline{background:transparent;color:var(--text);border:1.5px solid rgba(26,22,18,.15)}.btn-outline:hover{transform:translateY(-3px);background:var(--red-s);border-color:var(--red);color:var(--red)}
+    .btn-white{background:#fff;color:var(--red);box-shadow:0 6px 28px rgba(26,22,18,.10)}.btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(26,22,18,.16)}
+    .btn-wa{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;box-shadow:0 6px 28px rgba(34,197,94,.25)}.btn-wa:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(34,197,94,.35)}
+    .btn-lg{padding:18px 44px;font-size:.88rem}
+
+    .ctc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .ctc-col{display:flex;flex-direction:column;gap:20px}
+    .ccard{background:var(--surface);border:1px solid var(--brd2);border-radius:var(--r);padding:36px;transition:border-color .3s,transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+    .ccard:hover{border-color:var(--red-m);transform:translateY(-5px);box-shadow:0 16px 48px rgba(139,26,26,.07)}
+    .c-icon{width:46px;height:46px;background:var(--red-s);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:18px}
+    .ccard h3{font-family:var(--fh);font-size:1.5rem;font-weight:600;margin-bottom:8px}
+    .ccard p{color:var(--muted);font-size:.9rem;line-height:1.75;margin-bottom:22px}
+    .phone-link{font-family:var(--fh);font-size:1.9rem;font-weight:400;color:var(--red);text-decoration:none;display:block;margin-bottom:20px;transition:color .2s,letter-spacing .3s}
+    .phone-link:hover{color:var(--red2);letter-spacing:.02em}
+    .info-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+    .i-icon{width:30px;height:30px;background:var(--srf2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+    .i-txt{font-size:.86rem;color:var(--muted);line-height:1.6}
+    .i-txt strong{color:var(--text2);display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+
+    footer{border-top:1px solid var(--brd2);background:var(--surface)}
+    .ft-inner{max-width:1140px;margin:0 auto;padding:48px clamp(20px,5vw,64px) 32px}
+    .ft-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:32px;border-bottom:1px solid var(--brd2)}
+    .ft-brand{font-family:var(--fh);font-size:1.15rem;font-weight:600}
+    .ft-brand small{display:block;color:var(--muted);font-family:var(--fb);font-size:.78rem;font-weight:300;margin-top:4px}
+    .ft-socials{display:flex;gap:8px}
+    .soc-btn{width:38px;height:38px;border-radius:10px;background:var(--bg2);border:1px solid var(--brd2);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.88rem;color:var(--muted);cursor:none;transition:background .25s,border-color .25s,color .25s,transform .25s}
+    .soc-btn:hover{background:var(--red-s);border-color:var(--red-m);color:var(--red);transform:translateY(-2px)}
+    .ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px}
+    .ft-copy{font-size:.75rem;color:var(--muted);letter-spacing:.04em}
+    .ft-note{font-size:.7rem;color:var(--muted);opacity:.65;text-align:right}
+    .ft-note code{font-family:'SF Mono',monospace;font-size:.68rem;background:var(--bg2);padding:2px 6px;border-radius:4px;color:var(--red)}
+
+    @media(max-width:900px){
+      #inicio{grid-template-columns:1fr}.hero-right{display:none}
+      .nos-grid{grid-template-columns:1fr;gap:56px}
+      .menu-grid{grid-template-columns:1fr;gap:40px}
+      .ctc-grid{grid-template-columns:1fr}
+      .nav-links{display:none}.hamburger{display:flex}
+    }
+    @media(max-width:520px){
+      .feat-strip{grid-template-columns:repeat(3,1fr);gap:10px}
+      .hero-actions{flex-direction:column}.btn{justify-content:center}
+      .ft-top,.ft-bot{flex-direction:column;align-items:flex-start}.ft-note{text-align:left}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cur" id="cur" aria-hidden="true"></div>
+  <div class="cur-dot" id="curDot" aria-hidden="true"></div>
+
+  <nav class="site-nav" id="nav" role="navigation" aria-label="Navegación principal">
+    <a class="nav-logo" href="#inicio" aria-label="Ir al inicio">
+      <div class="nav-logo-mark">🏮</div>
+      <span class="nav-logo-text">Restaurante Asiático Casero</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#inicio" class="active">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#menu">Carta</a></li>
+      <li><a href="#contacto">Reservas</a></li>
+      <li><a class="nav-cta" href="https://wa.me/WHATSAPP_NUMBER?text=Hola%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener noreferrer">Reservar</a></li>
+    </ul>
+    <button class="hamburger" id="ham" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mob-menu" id="mobMenu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#menu">Carta</a>
+    <a href="#contacto">Reservas</a>
+    <a href="https://wa.me/WHATSAPP_NUMBER?text=Hola%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener noreferrer">Reservar →</a>
+  </div>
+
+  <section id="inicio" aria-label="Inicio">
+    <div class="hero-deco hero-deco-1" aria-hidden="true"></div>
+    <div class="hero-deco hero-deco-2" aria-hidden="true"></div>
+    <div class="hero-left">
+      <div class="hero-eyebrow">Auténtico · Casero · Tradicional</div>
+      <h1 class="hero-title" id="heroTitle"></h1>
+      <p class="hero-tagline">Sabor tradicional. Cocina de siempre.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="https://share.google/YAQTTYallC543xw2v" target="_blank" rel="noopener noreferrer" aria-label="Ver carta en PDF">Ver la Carta</a>
+        <a class="btn btn-outline btn-lg" href="#contacto">Reservar Mesa</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img">
+        <div class="hero-img-ph">
+          <span>🍜</span>
+          <small>Foto del restaurante</small>
+          <!-- Sustituye por: <img src="foto.jpg" alt="Plato principal" width="460" height="615" loading="lazy" style="width:100%;height:100%;object-fit:cover"> -->
+        </div>
+      </div>
+      <div class="hero-pill">
+        <div class="pill-dot"></div>
+        <span class="pill-txt">Abierto hoy · 13:00–16:00 y 20:00–23:00</span>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-track"><div class="scroll-line"></div></div>
+      <span>Descubre</span>
+    </div>
+  </section>
+
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="mq-item">Producto fresco diario<span class="mq-dot"></span></div>
+      <div class="mq-item">Recetas tradicionales<span class="mq-dot"></span></div>
+      <div class="mq-item">Cocina casera<span class="mq-dot"></span></div>
+      <div class="mq-item">Sabor auténtico<span class="mq-dot"></span></div>
+      <div class="mq-item">Dim Sum artesanal<span class="mq-dot"></span></div>
+      <div class="mq-item">Sin artificios<span class="mq-dot"></span></div>
+      <div class="mq-item">Arroces de temporada<span class="mq-dot"></span></div>
+      <div class="mq-item">Hecho con mimo<span class="mq-dot"></span></div>
+      <div class="mq-item">Producto fresco diario<span class="mq-dot"></span></div>
+      <div class="mq-item">Recetas tradicionales<span class="mq-dot"></span></div>
+      <div class="mq-item">Cocina casera<span class="mq-dot"></span></div>
+      <div class="mq-item">Sabor auténtico<span class="mq-dot"></span></div>
+      <div class="mq-item">Dim Sum artesanal<span class="mq-dot"></span></div>
+      <div class="mq-item">Sin artificios<span class="mq-dot"></span></div>
+      <div class="mq-item">Arroces de temporada<span class="mq-dot"></span></div>
+      <div class="mq-item">Hecho con mimo<span class="mq-dot"></span></div>
+    </div>
+  </div>
+
+  <section id="nosotros" aria-label="Sobre nosotros">
+    <div class="section-wrap">
+      <div class="nos-grid reveal" id="revNos">
+        <div class="nos-text">
+          <div class="sec-header">
+            <span class="sec-num">02</span>
+            <div class="sec-line" id="lineNos"></div>
+            <span class="sec-eye">Sobre nosotros</span>
+          </div>
+          <h2 class="sec-title">Cocina de casa,<br><em>sabor de siempre</em></h2>
+          <p>Cocinamos como se cocina en casa: con tiempo, con mimo y con los mismos ingredientes de siempre. Nada de artificios. Las recetas que preparamos llevan generaciones pasando de mano en mano.</p>
+          <p>Producto fresco cada día, preparación artesanal. Cada plato es un viaje directo a las cocinas familiares de Asia, sin rodeos y con mucho sabor.</p>
+          <p>Pequeño, acogedor y honesto. Así somos nosotros.</p>
+          <div class="feat-strip">
+            <div class="feat-item reveal d1"><div class="feat-icon">🌿</div><div class="feat-lbl">Producto fresco</div></div>
+            <div class="feat-item reveal d2"><div class="feat-icon">👨‍🍳</div><div class="feat-lbl">Recetas propias</div></div>
+            <div class="feat-item reveal d3"><div class="feat-icon">🏠</div><div class="feat-lbl">Cocina casera</div></div>
+          </div>
+        </div>
+        <div class="nos-visual">
+          <div class="vis-frame">
+            <div class="vis-ph">
+              <span>🍱</span>
+              <small>Foto del restaurante</small>
+              <!-- Sustituye por: <img src="foto-local.jpg" alt="Interior del restaurante" width="600" height="750" loading="lazy" style="width:100%;height:100%;object-fit:cover"> -->
+            </div>
+          </div>
+          <div class="vis-tag">Cocina asiática</div>
+          <div class="vis-stamp">Desde<br>siempre</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="menu" aria-label="La carta">
+    <div class="section-wrap">
+      <div class="menu-grid reveal" id="revMenu">
+        <div class="menu-card">
+          <div class="mc-bg1" aria-hidden="true"></div>
+          <div class="mc-bg2" aria-hidden="true"></div>
+          <span class="mc-lbl">La Carta</span>
+          <h2 class="mc-title">Todo lo que<br>nos gusta<br><em>preparar</em></h2>
+          <div class="menu-tags">
+            <span class="tag">🍜 Sopas</span>
+            <span class="tag">🍚 Arroces</span>
+            <span class="tag">🥟 Dim Sum</span>
+            <span class="tag">🥢 Salteados</span>
+            <span class="tag">🍣 Especialidades</span>
+            <span class="tag">🍵 Postres</span>
+          </div>
+          <a class="btn btn-white" href="https://share.google/YAQTTYallC543xw2v" target="_blank" rel="noopener noreferrer" aria-label="Abrir carta completa en PDF" style="position:relative">Ver carta completa (PDF)</a>
+        </div>
+        <div class="menu-right">
+          <div class="sec-header">
+            <span class="sec-num">03</span>
+            <div class="sec-line" id="lineMenu"></div>
+            <span class="sec-eye">Nuestra carta</span>
+          </div>
+          <h2 class="sec-title">Platos que<br><em>cuentan una historia</em></h2>
+          <p>Nuestros platos cambian con la temporada y lo que el mercado nos ofrece. Arroces, sopas, salteados y dim sum preparado a diario.</p>
+          <p>La carta completa en PDF, siempre actualizada y lista para que elijas antes de llegar.</p>
+          <a class="btn btn-primary" href="https://share.google/YAQTTYallC543xw2v" target="_blank" rel="noopener noreferrer" aria-label="Abrir carta en PDF">Abrir carta (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contacto" aria-label="Contacto y reservas">
+    <div class="section-wrap">
+      <div class="reveal" id="revCtc">
+        <div class="sec-header">
+          <span class="sec-num">04</span>
+          <div class="sec-line" id="lineCtc"></div>
+          <span class="sec-eye">Reservas y Contacto</span>
+        </div>
+        <h2 class="sec-title" style="margin-bottom:48px">Ven a <em>vernos</em></h2>
+        <div class="ctc-grid">
+          <div class="ccard">
+            <div class="c-icon">📞</div>
+            <h3>Llámanos</h3>
+            <p>Para reservas o consultas, estamos al teléfono en horario de apertura.</p>
+            <a class="phone-link" href="tel:PHONE_NUMBER" aria-label="Llamar al restaurante">PHONE_NUMBER</a>
+            <a class="btn btn-outline" href="tel:PHONE_NUMBER" aria-label="Llamar ahora">Llamar ahora</a>
+          </div>
+          <div class="ctc-col">
+            <div class="ccard">
+              <div class="c-icon">💬</div>
+              <h3>WhatsApp</h3>
+              <p>Escríbenos con el mensaje ya listo para enviar. Te respondemos en cuanto podamos.</p>
+              <a class="btn btn-wa" href="https://wa.me/WHATSAPP_NUMBER?text=Hola%2C%20quiero%20reservar%20una%20mesa%20para%20X%20personas" target="_blank" rel="noopener noreferrer" aria-label="Reservar por WhatsApp">Reservar por WhatsApp</a>
+            </div>
+            <div class="ccard">
+              <div class="c-icon">📍</div>
+              <h3>Dónde estamos</h3>
+              <div class="info-row">
+                <div class="i-icon">📍</div>
+                <div class="i-txt"><strong>Dirección</strong>TU DIRECCIÓN COMPLETA, Ciudad</div>
+              </div>
+              <div class="info-row">
+                <div class="i-icon">🕐</div>
+                <div class="i-txt"><strong>Horario</strong>Lun–Dom · 13:00–16:00 y 20:00–23:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ft-inner">
+      <div class="ft-top">
+        <div class="ft-brand">
+          Restaurante Asiático Casero
+          <small>Comida asiática casera · TU DIRECCIÓN COMPLETA, Ciudad</small>
+        </div>
+        <div class="ft-socials">
+          <a class="soc-btn" href="#" aria-label="Instagram">📷</a>
+          <a class="soc-btn" href="#" aria-label="Facebook">👤</a>
+          <a class="soc-btn" href="https://wa.me/WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="ft-bot">
+        <p class="ft-copy">© <span id="yr"></span> Restaurante Asiático Casero · Lun–Dom · 13:00–16:00 y 20:00–23:00</p>
+        <p class="ft-note">Deploy: repo <code>restaurante-asiatico</code> → Vercel · Reemplaza <code>PHONE_NUMBER</code> y <code>WHATSAPP_NUMBER</code> antes de publicar</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const cur = document.getElementById('cur'), dot = document.getElementById('curDot');
+    let mx=-100, my=-100;
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+    (function animCursor(){
+      cur.style.left=mx+'px'; cur.style.top=my+'px';
+      dot.style.left=mx+'px'; dot.style.top=my+'px';
+      requestAnimationFrame(animCursor);
+    })();
+    document.querySelectorAll('a,button,.feat-item,.ccard').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cur.classList.add('hov'));
+      el.addEventListener('mouseleave',()=>cur.classList.remove('hov'));
+    });
+
+    document.querySelectorAll('.btn').forEach(el=>{
+      el.addEventListener('mousemove',e=>{
+        const r=el.getBoundingClientRect();
+        const x=(e.clientX-r.left-r.width/2)*.28, y=(e.clientY-r.top-r.height/2)*.28;
+        el.style.transform='translateY(-3px) translate('+x+'px,'+y+'px)';
+      });
+      el.addEventListener('mouseleave',()=>el.style.transform='');
+    });
+
+    const nav=document.getElementById('nav');
+    const secs=document.querySelectorAll('section[id]');
+    const nAs=document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll',()=>{
+      nav.classList.toggle('scrolled',scrollY>40);
+      let cur2='inicio';
+      secs.forEach(s=>{ if(scrollY>=s.offsetTop-130) cur2=s.id; });
+      nAs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur2));
+    },{passive:true});
+
+    const ham=document.getElementById('ham'), mob=document.getElementById('mobMenu');
+    ham.addEventListener('click',()=>{
+      const open=mob.classList.toggle('open');
+      ham.classList.toggle('open',open);
+      ham.setAttribute('aria-expanded',open);
+      ham.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+    });
+    mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      mob.classList.remove('open'); ham.classList.remove('open');
+      ham.setAttribute('aria-expanded',false); ham.setAttribute('aria-label','Abrir menú');
+    }));
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
+        if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+      });
+    });
+
+    const lines=[['Cocina','asiática'],['de verdad.']];
+    const titleEl=document.getElementById('heroTitle');
+    lines.forEach((words,li)=>{
+      const wrap=document.createElement(li===1?'strong':'span');
+      if(li===1){wrap.style.cssText='display:block;color:var(--red);font-weight:700;';}
+      words.forEach((word,wi)=>{
+        const wspan=document.createElement('span');
+        wspan.style.cssText='display:inline-block;overflow:hidden;';
+        [...word].forEach((ch,ci)=>{
+          const s=document.createElement('span');
+          s.style.cssText='display:inline-block;animation:charUp .65s '+(0.2+li*0.18+wi*0.12+ci*0.028)+'s both cubic-bezier(.16,1,.3,1);';
+          s.textContent=ch;
+          wspan.appendChild(s);
+        });
+        wrap.appendChild(wspan);
+        if(wi<words.length-1) wrap.appendChild(document.createTextNode('\\u00A0'));
+      });
+      titleEl.appendChild(wrap);
+      if(li<lines.length-1) titleEl.appendChild(document.createElement('br'));
+    });
+
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);} });
+    },{threshold:0.18});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    const lineObs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('show');lineObs.unobserve(e.target);} });
+    },{threshold:0.4});
+    document.querySelectorAll('.sec-line').forEach(el=>lineObs.observe(el));
+  <\/script>
+</body>
+</html>`;
+
+  const download = () => {
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'index.html'; a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div style={{
+      minHeight: '100vh', display: 'flex', flexDirection: 'column',
+      alignItems: 'center', justifyContent: 'center',
+      background: '#faf8f5', fontFamily: "'Inter', sans-serif", padding: '40px 20px',
+      gap: '24px', textAlign: 'center'
+    }}>
+      <div style={{ fontSize: '3rem' }}>🏮</div>
+      <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 300, color: '#1a1612' }}>
+        Tu <em style={{ color: '#8b1a1a', fontStyle: 'italic' }}>index.html</em> está listo
+      </h1>
+      <p style={{ color: '#7a6f67', maxWidth: '480px', lineHeight: 1.7, fontSize: '0.95rem' }}>
+        Descarga el archivo, reemplaza los placeholders y súbelo directamente a GitHub para desplegar en Vercel.
+      </p>
+      <button
+        onClick={download}
+        style={{
+          background: '#8b1a1a', color: '#fff', border: 'none', borderRadius: '100px',
+          padding: '16px 40px', fontSize: '0.85rem', fontWeight: 600,
+          letterSpacing: '0.08em', textTransform: 'uppercase', cursor: 'pointer',
+          boxShadow: '0 8px 28px rgba(139,26,26,0.3)',
+          transition: 'transform 0.2s, box-shadow 0.2s'
+        }}
+        onMouseOver={e => { e.target.style.transform='translateY(-2px)'; e.target.style.boxShadow='0 14px 40px rgba(139,26,26,0.4)'; }}
+        onMouseOut={e => { e.target.style.transform=''; e.target.style.boxShadow='0 8px 28px rgba(139,26,26,0.3)'; }}
+      >
+        Descargar index.html
+      </button>
+      <p style={{ color: '#7a6f67', fontSize: '0.75rem', opacity: 0.7 }}>
+        Reemplaza PHONE_NUMBER · WHATSAPP_NUMBER · TU DIRECCIÓN antes de publicar
+      </p>
+    </div>
+  );
+}
